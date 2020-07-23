@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 这个文件不需要改动 -->
+<generatorConfiguration>
+	<context id="mybatis" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="utf-8" />
+		<plugin type="com.wen.mapper.generator.MybatisGeneratorPlugin" />
+
+		<commentGenerator>
+			<!-- 阻止生成注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/"
+			userId="" password="">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<!-- 是否强制DECIMAL和NUMERIC类型的字段转换为Java类型的java.math.BigDecimal -->
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="" targetProject="src\main\java">
+			<!-- 是否会生成子包 -->
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="" targetProject="src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="com.wen.mapper.generator.java.MapperGenerator"
+			targetPackage="" targetProject="src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table schema="" tableName="" domainObjectName="" />
+	</context>
+</generatorConfiguration>
